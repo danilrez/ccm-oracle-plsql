@@ -1,7 +1,5 @@
 # CrappyCodeMaker syntax highlighting for Oracle PL/SQL
 
-![Installs](https://img.shields.io/visual-studio-marketplace/i/CrappyCodeMaker.ccm-plsql-oracle?color=117fc8&label=Installs&logo=docusign&logoColor=white)
-
 This extension **enhances** the default syntax highlighting for **Oracle PL/SQL**
 
 ![Preview](https://raw.githubusercontent.com/danilrez/ccm-oracle-plsql/refs/heads/master/images/Preview.png)
