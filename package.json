@@ -2,7 +2,7 @@
 	"name": "ccm-plsql-oracle",
 	"displayName": "CrappyCodeMaker Oracle PL/SQL",
 	"description": "CrappyCodeMaker syntax highlighting for Oracle PL/SQL",
-	"version": "1.0.26",
+	"version": "1.1.0",
 	"author": "Danil Reznichenko [@danilrez]",
 	"publisher": "CrappyCodeMaker",
 	"license": "MIT",
