@@ -1,41 +1,30 @@
-<div style="background: #1C1C1C; border-radius: 5px"><div style="padding: 10px">
-
-# ![title_logo](https://github.com/CrappyCodeMaker/CCM-OraclePLSQL/blob/master/images/title_logo.png?raw=true)
+# CrappyCodeMaker syntax highlighting for Oracle PL/SQL
 
 ![Installs](https://img.shields.io/visual-studio-marketplace/i/CrappyCodeMaker.ccm-plsql-oracle?color=117fc8&label=Installs&logo=docusign&logoColor=white)
-![Version](https://img.shields.io/visual-studio-marketplace/v/CrappyCodeMaker.ccm-plsql-oracle?color=117fc8&label=Visual%20Studio%20Marketplace&logo=wikidata&logoColor=fff)
 
-<div style="color: white;">
-<p style="font-weight: bold; color: white">This extension adds full syntax highlight for Oracle PL/SQL.</p>
-</div>
+This extension **enhances** the default syntax highlighting for **Oracle PL/SQL**
 
-<h2 style="font-weight: bold; color: white">Preview</h2>
-<div style="color: white;">
+![Preview](https://raw.githubusercontent.com/danilrez/ccm-theme/refs/heads/master/public/images/Preview.png)
 
-<p align="center">
-  <img alt="preview1" width="100%" src="https://github.com/CrappyCodeMaker/CCM-OraclePLSQL/blob/master/images/Title.png?raw=true">
-</p>
+## 🚀 Install
 
-</div>
-<h2 style="font-weight: bold; color: white">Installation</h2>
-<div style="color: white;">
+1. Go to [![VS Marketplace Badge](https://img.shields.io/badge/VS%20Marketplace-2C94FC?logo=visualstudiocode&logoColor=fff&style=flat)](https://marketplace.visualstudio.com/items?itemName=CrappyCodeMaker.ccm-plsql-oracle).
 
-1. Open the **`Extensions`** sidebar in ![Visual Studio Code Badge](https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?logo=visualstudiocode&logoColor=fff&style=flat)
-2. Search for **`CCM Oracle PL/SQL`**
-3. Click **`Install`**
+2. Click on the ![Install Badge](https://img.shields.io/badge/Install-2C94FC?logo=visualstudiocode&logoColor=fff&style=flat) button.
+3. In `Settings.json` add the following configuration:
+    ```JSON
+    	"files.associations": {
+    		"*.pck": "plsql-ccm",
+    		"*.sql": "plsql-ccm",
+    	},
+    ```
 4. Enjoy! 🎉
 
-</div>
-<h2 style="font-weight: bold; color: white">Feedback</h2>
-<div style="color: white;">
+## 💬 Feedback
 
-If you have suggestions, please open an <b>[issue](https://github.com/CrappyCodeMaker/CCM-OraclePLSQL/issues)</b> or better yet, a <b>[pull request](https://github.com/CrappyCodeMaker/CCM-OraclePLSQL/pulls)</b>. Be nice 😉
+We’d love to hear your thoughts! If you have suggestions or encounter issues, please open an **[![Issue Badge](https://img.shields.io/badge/Issue-2C94FC?logo=visualstudiocode&logoColor=fff&style=flat)](https://github.com/danilrez/CCM-Theme/issues)**.
+Be nice and happy coding! 😉
 
-</div>
-<h2 style="font-weight: bold; color: white">Authors</h2>
-<div style="color: white;">
+---
 
-Authored by <b>© [CrappyCodeMaker](https://github.com/CrappyCodeMaker)</b>
-
-</div>
-</div></div>
+> Authored by © **[Danil Reznichenko](https://github.com/danilrez)**

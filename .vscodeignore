@@ -1,5 +1,9 @@
 .vscode/**
 .vscode-test/**
-.gitignore
-snippets
-vsc-extension-quickstart.md
+.changeset/
+/node_modules/
+/pnpm-lock.yaml
+/src/
+/build/
+/.eslintrc.json
+/.prettierignore
