@@ -4,7 +4,7 @@
 
 This extension **enhances** the default syntax highlighting for **Oracle PL/SQL**
 
-![Preview](https://raw.githubusercontent.com/danilrez/ccm-theme/refs/heads/master/public/images/Preview.png)
+![Preview](https://raw.githubusercontent.com/danilrez/ccm-oracle-plsql/refs/heads/master/images/Preview.png)
 
 ## 🚀 Install
 
