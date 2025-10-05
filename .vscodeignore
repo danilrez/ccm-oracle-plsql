@@ -5,7 +5,8 @@
 !images/icon.png
 !images/database_oracle.svg
 !syntaxes/
-!CHANGELOG
+!snippets/
+!CHANGELOG.md
 !LICENSE
 !package.json
 !README.md
