@@ -1,9 +1,12 @@
-.vscode/**
-.vscode-test/**
-.changeset/
-/node_modules/
-/pnpm-lock.yaml
-/src/
-/build/
-/.eslintrc.json
-/.prettierignore
+# Exclude everything by default
+**
+
+# Re-include only the "build" folder and the following files:
+!images/icon.png
+!images/database_oracle.svg
+!syntaxes/
+!snippets/
+!CHANGELOG.md
+!LICENSE
+!package.json
+!README.md
