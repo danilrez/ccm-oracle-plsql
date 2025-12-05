@@ -1,6 +1,6 @@
 # PL/SQL Language Pack for VS Code
 
-Modern syntax highlighting, ready-to-use snippets, and documentation helpers for Oracle PL/SQL.
+Syntax highlighting, and ready-to-use snippets for Oracle PL/SQL.
 
 ## ✨ Features
 
