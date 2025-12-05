@@ -1,13 +1,11 @@
-# 🤝 Contributing Guide
+# 🤝 Contributing to the Oracle PL/SQL Language Pack
 
-Use this guide to add colors or tweak themes without diving deep into the codebase. Follow the steps, drop in your palettes from Figma, and you will end up with a working VS Code build.
-
----
+Thank you for helping improve this VS Code language extension. The notes below keep changes consistent and easy to review.
 
 ## 🧰 Prerequisites
 
-- Node.js 22.x
-- pnpm (repository uses the workspace lockfile)
+-   Node.js 18+
+-   VS Code with the `Extension Development Host` profile available
 
 Install dependencies once:
 
@@ -15,110 +13,22 @@ Install dependencies once:
 pnpm install
 ```
 
-## 🎨 UI palettes (workbench colors)
+## ✍️ Making changes
 
-- Files live in `src/colors/palettes`.
-- Each file exports a constant named after the file (`dark`, `light`, …) and contains shade maps (keys `900` down to `50`).
-- Every shade is an HSLA string copied straight out of Figma (`'hsla(222, 27.8%, 7.1%, 1)'` works great).
+-   **Grammar**: `syntaxes/plsql.tmLanguage` (TextMate grammar) and `syntaxes/plsql.configuration.json` (brackets, comments, word patterns).
+-   **Snippets & completions**: `snippets/plsql.snippets.json`, `snippets/plsql.completion.json`, `snippets/pldoc.json`.
+-   **Extension metadata**: `package.json` (display name, categories, activation, contributed languages).
 
-Guidelines (plain English version):
+Tips:
 
-1. You must provide all ten shade keys (`900` to `50`). Leaving gaps causes runtime errors.
-2. Keep the HSLA format from Figma/Tailwind. Percentages matter.
-3. Never call `registerUiPalette` inside the palette file. Instead, add a line in `src/colors/palettes/index.ts` so the palette is registered once for the entire app.
+-   Keep scope names stable to avoid breaking user themes.
+-   If you add new file extensions, register them in `contributes.languages[0].extensions` and ensure sample files exist for testing.
+-   Prefer small, focused pull requests with a short rationale for each change.
 
-Snippet for reference:
+## 🚀 Opening pull requests
 
-```ts
-export const dark = {
-	neutral: {
-		900: 'hsla(220, 26%, 6%, 1)',
-		…,
-		50: 'hsla(220, 6%, 96%, 1)',
-	},
-} as const;
-```
+-   Describe the change and its motivation in the PR body.
+-   Include screenshots when altering highlighting or snippets.
+-   Mention any known regressions or follow-up work.
 
-## ✍️ Syntax palettes (token colors)
-
-- Files live in `src/colors/syntaxPalettes`.
-- Each file exports a constant named after the file (again, `dark`, `light`, `night`).
-- Entries point to UI palette colors via `[colorName, shade, opacity?]`.
-- Registration is centralized in `src/colors/syntaxPalettes/index.ts`. Add just one `registerSyntaxPalette('my-variant', myVariant);` line there when you introduce a new syntax palette.
-
-Steps to add/modify:
-
-1. Adjust the palette object: it should be a simple map of scopes to color references.
-2. Export the palette and register it in `syntaxPalettes/index.ts`.
-3. Run `pnpm test -- colors/syntaxPalettes.test.ts` to spot mismatches early.
-
-## 🧪 Testing palette changes
-
-You can run specific Vitest suites while iterating on palettes:
-
-```bash
-# UI palette validation
-pnpm test -- colors/palettes.test.ts
-
-# Syntax palette validation
-pnpm test -- colors/syntaxPalettes.test.ts
-```
-
-Running `pnpm test` executes the entire suite and is recommended before opening a PR.
-
-## 🧱 Theme descriptors & build targets
-
-### 📁 Location
-
-`src/index.ts`
-
-- The `themeDescriptors` object lists every VS Code theme variant we ship.
-- Each entry contains:
-    - `name`: the display name baked into `package.json`.
-    - `type`: `'dark'` or `'light'` (used by VS Code).
-    - `syntaxPalette`: optional override (`'night'`, `'light'`, etc.).
-    - `enableTokenColors`: set to `false` to reuse VS Code default syntax.
-    - `brandColors`: which UI palette should color the workbench.
-
-### ➕ Adding a theme
-
-1. If the UI colors differ, add a new entry to `brandOverridesByTheme`.
-2. Insert a descriptor inside `themeDescriptors` with a unique key:
-
-```ts
-themeDescriptors['rainbow'] = {
-	name: 'Crappy Rainbow',
-	type: 'dark',
-	brandColors: brandOverridesByTheme.dark,
-	syntaxPalette: 'night',
-};
-```
-
-3. Re-run `pnpm generate:themes` to export JSON files.
-
-### 🛠️ CLI helpers
-
-- `pnpm generate:dark` – builds only dark themes.
-- `pnpm generate:light` – builds only light themes.
-- `pnpm generate:themes` – builds everything, respecting the `themeDescriptors` map.
-- Use `pnpm tsx src/index.ts --theme <key>` when you need to target a single descriptor.
-
-## 📦 Building & packaging
-
-Handy commands:
-
-- `pnpm generate:themes` – rebuilds VS Code JSON files into `build/themes`.
-- `pnpm package` – recreates the VSIX package (automatically triggers `generate:themes`).
-- `pnpm tsx src/index.ts --dark --test` – dry run that previews palette data without touching `build/`.
-- `pnpm test` – runs Vitest (full suite).
-
-## ✅ Checklist when adding colors/themes
-
-1. Update the relevant palette file(s) with HSLA strings copied from Figma.
-2. Register the palette in the corresponding `index.ts` (UI or syntax).
-3. (Optional) Adjust syntax palettes if you changed token references.
-4. Add or update theme descriptors with the new keys and names.
-5. Run targeted tests (`pnpm test -- colors/...`) plus `pnpm test` and `pnpm generate:themes`.
-6. Update `README.md` if the visible theme list changed.
-
-Following these steps keeps registries centralized and makes it easier for future contributors to reason about the build.
+Thanks for contributing!

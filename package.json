@@ -1,8 +1,8 @@
 {
 	"name": "ccm-plsql-oracle",
-	"displayName": "Oracle PL/SQL Language Pack",
+	"displayName": "PL/SQL Language Pack",
 	"description": "Modern syntax highlighting, snippets, and docs support for Oracle PL/SQL in VS Code",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"author": "Danil Reznichenko [@danilrez]",
 	"publisher": "CrappyCodeMaker",
 	"license": "MIT",
@@ -26,14 +26,24 @@
 	],
 	"keywords": [
 		"plsql",
-		"oracle",
+		"pl/sql",
+		"oracle plsql",
+		"plsql oracle",
+		"pl/sql oracle",
+		"oracle pl/sql",
+		"oracle database",
+		"oracle sql",
+		"oracle developer",
+		"oracle apex",
+		"oracle cloud",
+		"oci",
+		"sqlplus",
+		"stored procedure",
+		"syntax highlighting",
+		"plsql snippets",
 		"crappycodemaker",
 		"danilrez",
-		"reznida",
-		"plsql oracle",
-		"oracle plsql",
-		"pl/sql oracle",
-		"oracle pl/sql"
+		"reznida"
 	],
 	"contributes": {
 		"languages": [
@@ -98,7 +108,6 @@
 		]
 	},
 	"scripts": {
-		"package": "vsce package -o ./ccm-plsql-${npm_package_version}.vsix"
-	},
-	"packageManager": "pnpm@9.0.0"
+		"package": "vsce package -o ./plsql-pack-${npm_package_version}.vsix"
+	}
 }
