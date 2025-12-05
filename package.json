@@ -1,8 +1,8 @@
 {
 	"name": "ccm-plsql-oracle",
-	"displayName": "CrappyCodeMaker Oracle PL/SQL",
-	"description": "CrappyCodeMaker syntax highlighting for Oracle PL/SQL",
-	"version": "1.1.4",
+	"displayName": "Oracle PL/SQL Language Pack",
+	"description": "Modern syntax highlighting, snippets, and docs support for Oracle PL/SQL in VS Code",
+	"version": "1.2.0",
 	"author": "Danil Reznichenko [@danilrez]",
 	"publisher": "CrappyCodeMaker",
 	"license": "MIT",
@@ -97,27 +97,8 @@
 			}
 		]
 	},
-	"devDependencies": {
-		"@types/vscode": "^1.85.0",
-		"@vscode/vsce": "^3.2.2",
-		"prettier": "^3.3.3"
-	},
 	"scripts": {
-		"package": "vsce package -o ./ccm-plsql-${npm_package_version}.vsix",
-		"ci:prettier": "prettier . --write"
-	},
-	"prettier": {
-		"printWidth": 150,
-		"singleQuote": true,
-		"useTabs": true,
-		"tabWidth": 4,
-		"importOrder": [
-			"^[./]"
-		],
-		"importOrderCaseInsensitive": true,
-		"importOrderSeparation": true,
-		"importOrderSortSpecifiers": true,
-		"endOfLine": "lf"
+		"package": "vsce package -o ./ccm-plsql-${npm_package_version}.vsix"
 	},
 	"packageManager": "pnpm@9.0.0"
 }
