@@ -29,6 +29,8 @@ Syntax highlighting, and ready-to-use snippets for Oracle PL/SQL.
 -   `plsql-language.completion.path`: Path to a JSON file that drives identifier completions (see `snippets/plsql.completion.json`).
 -   `plsql-language.pldoc.path`: Path to a JSON file defining the PL/SQL documentation snippet (see `snippets/pldoc.json`).
 
+_Tip: keep your custom completion/PLDoc files outside the extension folder (e.g., in your project) and point the settings above to them; the bundled files are overwritten on update._
+
 Override the bundled snippets via the standard VS Code snippets UI if you need per-project tweaks.
 
 ## 💬 Feedback

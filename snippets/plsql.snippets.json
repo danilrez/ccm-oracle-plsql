@@ -7,30 +7,30 @@
             "  $0",
             "end $1;"
         ],
-        "description": "package spec"
+        "description": "Package specification"
     },
     "package..body": {
-        "prefix": "pkg",
+        "prefix": "pkgb",
         "body": [
             "create or replace package body ${1:name}",
             "as",
             "  $0",
             "end $1;"
         ],
-        "description": "package body"
+        "description": "Package body"
     },
 
     "func..spec": {
-        "prefix": "func",
+        "prefix": "fns",
         "body": [
             "function ${1:name}(",
             "  ${2:param} in ${3:param_type}",
             ") return ${4:return_type};"
         ],
-        "description": "function spec"
+        "description": "Function specification"
     },
     "func": {
-        "prefix": "func",
+        "prefix": "fn",
         "body": [
             "function ${1:name}(",
             "  ${2:param} in ${3:param_type}",
@@ -40,20 +40,20 @@
             "  $0",
             "end $1;"
         ],
-        "description": "function"
+        "description": "Function body"
     },
 
     "proc..spec": {
-        "prefix": "proc",
+        "prefix": "prs",
         "body": [
             "procedure ${1:name}(",
             "  ${2:param} in ${3:param_type}",
             ");"
         ],
-        "description": "procedure spec"
+        "description": "Procedure specification"
     },
     "proc": {
-        "prefix": "proc",
+        "prefix": "pr",
         "body": [
             "procedure ${1:name}(",
             "  ${2:param} in ${3:param_type}",
@@ -63,30 +63,30 @@
             "  $0",
             "end $1;"
         ],
-        "description": "procedure"
+        "description": "Procedure body"
     },
 
     "begin..end": {
-        "prefix": "begin",
+        "prefix": "beg",
         "body": [
             "begin",
             "  $0",
             "end;"
         ],
-        "description": "begin..end"
+        "description": "BEGIN..END block"
     },
 
     "if..end": {
-        "prefix": "ifthen",
+        "prefix": "if",
         "body": [
             "if ${1:condition} then",
             "  $0",
             "end if;"
         ],
-        "description": "if..end"
+        "description": "IF block"
     },
     "if..else..end": {
-        "prefix": "ifelse",
+        "prefix": "ifel",
         "body": [
             "if ${1:condition} then",
             "  $2",
@@ -94,7 +94,7 @@
             "  $3",
             "end if;"
         ],
-        "description": "if..else..end"
+        "description": "IF/ELSE block"
     },
     "elsif..": {
         "prefix": "elsif",
@@ -102,7 +102,7 @@
             "elsif ${1:condition} then",
             "  $0"
         ],
-        "description": "elsif.."
+        "description": "ELSIF branch"
     },
 
     "case..when..end": {
@@ -113,14 +113,14 @@
             "  else $4",
             "end;"
         ],
-        "description": "case..when..end"
+        "description": "CASE expression"
     },
     "when..then": {
         "prefix": "when",
         "body": [
             "when ${1:condition} then $2"
         ],
-        "description": "when..then"
+        "description": "WHEN branch"
     },
 
     "loop..end": {
@@ -128,57 +128,57 @@
         "body": [
             "loop",
             "  $0",
-            "end loop"
+            "end loop;"
         ],
-        "description": "loop..end"
+        "description": "LOOP"
     },
 
     "for..in": {
-        "prefix": "for",
+        "prefix": "forr",
         "body": [
             "for $1 in $2 loop",
             "  $0",
-            "end loop"
+            "end loop;"
         ],
-        "description": "for..in"
+        "description": "FOR loop"
     },
 
     "for..in..collection": {
-        "prefix": "for",
+        "prefix": "forc",
         "body": [
             "for i in 1..${1:collection}.count loop",
             "  $0",
-            "end loop"
+            "end loop;"
         ],
-        "description": "for..in..collection"
+        "description": "FOR collection loop"
     },
 
     "exception_no_data": {
-        "prefix": "exception",
+        "prefix": "exn",
         "body": [
             "exception",
             "  when no_data_found then",
             "    $1;"
         ],
-        "description": "exception no_data_found"
+        "description": "Exception handler: NO_DATA_FOUND"
     },
     "exception_too_many": {
-        "prefix": "exception",
+        "prefix": "ext",
         "body": [
             "exception",
             "  when too_many_rows then",
             "    $1;"
         ],
-        "description": "exception too_many_rows"
+        "description": "Exception handler: TOO_MANY_ROWS"
     },
     "exception_others": {
-        "prefix": "exception",
+        "prefix": "exo",
         "body": [
             "exception",
             "  when ${1:others} then",
             "    ${2:null};"
         ],
-        "description": "exception others"
+        "description": "Exception handler: OTHERS"
     },
 
     "raise_application_error": {
@@ -189,11 +189,11 @@
         "description": "raise application error"
     },
     "dbms_output.put_line": {
-        "prefix": "output",
+        "prefix": "out",
         "body": [
             "dbms_output.put_line('${1:message}');"
         ],
-        "description": "dbms_output.put_line"
+        "description": "DBMS_OUTPUT.PUT_LINE"
     },
 
     "select": {

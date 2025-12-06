@@ -29,7 +29,7 @@
         <!-- DATA TYPES -->
         <dict>
             <key>match</key>
-            <string>(?i)\b(VARRAY|DUAL|REAL|STRING|SYS_REFCURSOR|MSLABEL|INT|DEC|CHARACTER|BYTE|SYSDATE|TIMESTAMP(\s+WITH(\s+LOCAL)?\s+TIME\s+ZONE)?|INTERVAL\s*DAY(\(\D*\))?\s*TO\s*MONTH|INTERVAL\s*YEAR(\(\D*\))?\s*TO\s*SECOND(\(\D*\))?|CHAR|VARCHAR|VARCHAR2|NCHAR|NVARCHAR2|BOOLEAN|DATE|XMLTYPE|BLOB|CLOB|NCLOB|BFILE|LONG|LONG\s+RAW|RAW|NUMBER|INTEGER|DECIMAL|SMALLINT|FLOAT|BINARY_(FLOAT|DOUBLE|INTEGER)|PLS_(FLOAT|DOUBLE|INTEGER)|ROWID|UROWID|VARARRAY|NATURAL|NATURALN|POSITIVE|POSITIVEN|SIGNTYPE|SIMPLE_(FLOAT|DOUBLE|INTEGER))\b</string>
+            <string>(?i)\b(VARRAY|DUAL|REAL|STRING|JSON|SYS_REFCURSOR|MSLABEL|INT|DEC|CHARACTER|BYTE|SYSDATE|TIMESTAMP(\s+WITH(\s+LOCAL)?\s+TIME\s+ZONE)?|INTERVAL\s*DAY(\(\D*\))?\s*TO\s*MONTH|INTERVAL\s*YEAR(\(\D*\))?\s*TO\s*SECOND(\(\D*\))?|CHAR|VARCHAR|VARCHAR2|NCHAR|NVARCHAR2|BOOLEAN|DATE|XMLTYPE|BLOB|CLOB|NCLOB|BFILE|LONG|LONG\s+RAW|RAW|NUMBER|INTEGER|DECIMAL|SMALLINT|FLOAT|BINARY_(FLOAT|DOUBLE|INTEGER)|PLS_(FLOAT|DOUBLE|INTEGER)|ROWID|UROWID|VARARRAY|NATURAL|NATURALN|POSITIVE|POSITIVEN|SIGNTYPE|SIMPLE_(FLOAT|DOUBLE|INTEGER))\b</string>
             <key>name</key>
             <string>support.type.oracleplsql</string>
         </dict>
@@ -167,7 +167,7 @@
         <!-- NUMBERS -->
         <dict>
             <key>match</key>
-            <string>\b\d+(\.\d+)?\b</string>
+            <string>\b\d+(?:\.\d+)?(?:[eE][+-]?\d+)?\b</string>
             <key>name</key>
             <string>constant.numeric.oracleplsql</string>
         </dict>
@@ -187,6 +187,22 @@
             <string>"</string>
             <key>name</key>
             <string>string.quoted.double.oracleplsql</string>
+        </dict>
+        <dict>
+            <key>begin</key>
+            <string>(?i)q'(.{1})</string>
+            <key>end</key>
+            <string>'\1</string>
+            <key>name</key>
+            <string>string.quoted.other.q.oracleplsql</string>
+        </dict>
+        <dict>
+            <key>begin</key>
+            <string>(?i)nq'(.{1})</string>
+            <key>end</key>
+            <string>'\1</string>
+            <key>name</key>
+            <string>string.quoted.other.nq.oracleplsql</string>
         </dict>
         <!-- OTHERS -->
         <dict>
@@ -216,6 +232,12 @@
             </dict>
             <key>match</key>
             <string>(?i)\b(FIRST\s+)(\d+\s+)(ROWS\s+ONLY)</string>
+            <key>name</key>
+            <string>entity.other.attribute-name.builtin.aggregate.oracleplsql</string>
+        </dict>
+        <dict>
+            <key>match</key>
+            <string>(?i)\b(FETCH\s+NEXT\s+\d+\s+ROWS\s+ONLY)\b</string>
             <key>name</key>
             <string>entity.other.attribute-name.builtin.aggregate.oracleplsql</string>
         </dict>
@@ -357,7 +379,7 @@
         </dict>
             <dict>
             <key>match</key>
-            <string>(?i)\b(with|select|from|where|order\s+(siblings\s+)?by|group\s+by|rollup|cube|((left|right|cross|natural|inner)\s+(outer\s+)?)?join|on|asc|desc|update|set|insert|into|values|delete|distinct|union|minus|intersect|having|limit|table|between|like|of|row|(range|rows)\s+between|nulls\s+first|nulls\s+last|before|after|all|any|exists|rownum|cursor|returning|over|partition\s+by|merge|using|matched|pivot|unpivot)\b</string>
+            <string>(?i)\b(with|select|from|where|order\s+(siblings\s+)?by|group\s+by|rollup|cube|((left|right|cross|natural|inner)\s+(outer\s+)?)?join|on|asc|desc|update|set|insert|into|values|delete|distinct|union|minus|intersect|having|limit|fetch|table|between|like|of|row|(range|rows)\s+between|nulls\s+first|nulls\s+last|before|after|all|any|exists|rownum|cursor|returning|over|partition\s+by|merge|using|matched|pivot|unpivot|match_recognize|measures|pattern|define|subset)\b</string>
             <key>name</key>
             <string>keyword.other.sql.oracleplsql</string>
         </dict>

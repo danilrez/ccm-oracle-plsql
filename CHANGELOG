@@ -1,3 +1,9 @@
+### 1.2.3
+
+- Added q-quote and exponent-aware string/number highlighting; included `FETCH NEXT ... ROWS ONLY` and modern SQL keywords.
+- Updated snippets: fixed missing semicolons, simplified prefixes and refreshed descriptions for quicker discovery.
+- Added auto-closing support for optimizer hints and aligned type list with JSON data type.
+
 ### 1.2.0
 
 - Updated icons and preview images.
