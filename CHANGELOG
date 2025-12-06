@@ -1,32 +1,32 @@
-### 1.2.3
+### 1.2.4
 
-- Added q-quote and exponent-aware string/number highlighting; included `FETCH NEXT ... ROWS ONLY` and modern SQL keywords.
-- Updated snippets: fixed missing semicolons, simplified prefixes and refreshed descriptions for quicker discovery.
-- Added auto-closing support for optimizer hints and aligned type list with JSON data type.
+-   Added q-quote and exponent-aware string/number highlighting; included `FETCH NEXT ... ROWS ONLY` and modern SQL keywords.
+-   Updated snippets: fixed missing semicolons, simplified prefixes and refreshed descriptions for quicker discovery.
+-   Added auto-closing support for optimizer hints and aligned type list with JSON data type.
 
 ### 1.2.0
 
-- Updated icons and preview images.
-- Minor documentation fixes.
+-   Updated icons and preview images.
+-   Minor documentation fixes.
 
 ### 1.1.4
 
-- Bundled PL/SQL code snippets and documentation templates; registered them with VS Code.
-- Ensured snippet assets are packaged and corrected the `vsce package` output name.
-- Expanded README guidance for configuration and custom file associations.
+-   Bundled PL/SQL code snippets and documentation templates; registered them with VS Code.
+-   Ensured snippet assets are packaged and corrected the `vsce package` output name.
+-   Expanded README guidance for configuration and custom file associations.
 
 ### 1.1.3
 
-- Refined the packaging ignore list to keep the extension lightweight.
+-   Refined the packaging ignore list to keep the extension lightweight.
 
 ### 1.1.2
 
-- Updated extension icon assets for proper Marketplace display.
+-   Updated extension icon assets for proper Marketplace display.
 
 ### 1.1.1
 
-- Adjusted icon metadata to comply with Marketplace requirements.
+-   Adjusted icon metadata to comply with Marketplace requirements.
 
 ### 1.0.26
 
-- Initial public release with enhanced Oracle PL/SQL syntax highlighting.
+-   Initial public release with enhanced Oracle PL/SQL syntax highlighting.
